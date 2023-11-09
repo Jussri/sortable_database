@@ -3,7 +3,7 @@ const connection = require("../db/connection");
 const sortable = {
   findAll: () =>
     new Promise((resolve, reject) => {
-      connection.query("SELECT image FROM sortable;", (err, result) => {
+      connection.query("SELECT name FROM sortable;", (err, result) => {
         if (err) {
           reject(err);
         }
