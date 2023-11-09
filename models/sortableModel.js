@@ -3,12 +3,15 @@ const connection = require("../db/connection");
 const sortable = {
   findAll: () =>
     new Promise((resolve, reject) => {
-      connection.query("SELECT name FROM sortable;", (err, result) => {
-        if (err) {
-          reject(err);
+      connection.query(
+        "SELECT sortable.name, image FROM sortable;",
+        (err, result) => {
+          if (err) {
+            reject(err);
+          }
+          resolve(result);
         }
-        resolve(result);
-      });
+      );
     }),
 
   findBySearch: (search) =>
