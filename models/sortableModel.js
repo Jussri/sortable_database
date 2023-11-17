@@ -35,7 +35,7 @@ const sortable = {
 
   findMap: (search) =>
     new Promise((resolve, reject) => {
-      const sqlQuery = "SELECT map_image FROM map WHERE map_name = ??";
+      const sqlQuery = "SELECT map_image FROM map WHERE ?? = ?";
       connection.query(
         sqlQuery,
         [search.column, search.value],
